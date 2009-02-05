@@ -1,0 +1,87 @@
+= Netzke 
+Netzke is a framework facilitating creation of reusable and extendable Ext JS + Rails components (widgets), plus a set of ready-to-use components to start with. It's primarily meant for creating desktop-like web-applications (for example, back-ends), but can also be used to create widgets to be embedded into normal Rails HTML views.
+
+== Introduction
+I have seen several attempts to implement some kind of Rails / Ext JS integration, which either appeared to be too generic and rather helpless (something like Ruby wrappers for JavaScript), or too limited in functionality (like a Rails plugin providing an Ext grid). Those projects are trying to save a developer from writing JavaScript one way or another. After several months of working professionally with Rails and Ext JS, I came to the conclusion, that this is simply not realistic: in order to have access to all the power of Ext JS library, one sooner or later comes to the necessity of writing JavaScript - that's where all those wrappers show there fatal limitations.
+
+Finally, after some 2 years of rethinking and reworking my applications, I came to a a different approach that proved to be satisfactory. I thought that if I need to write JavaScript, at least I want to do it as little as possible, and that what I have written I want to be highly reusable. I wanted to find a way to write code, which will be: *reusable*, *extendible* and *efficient*. Further down I elaborate on each of this key moments, which defined the shape of the framework that I called "Netzke".
+
+== Reusability
+Writing the client- and server-side code (JavaScript and Ruby, correspondingly) for an Ext grid maybe a lot of work - depending on how much functionality you want to throw in. I wanted my grids not only to allow me to do all the basic CRUD (create-read-update-delete) operations, I also wanted them to be configurable on the fly (say, you want to change the width of a column or the order of the columns), supporting filters, sorting, pagination, etc - a lot of different functionality that I wanted in all my grids. But, from the other side, I wanted my grids to be able to display data from different Rails models, or enforce different permissions, look or behave differently for different users that log  into the system, etc. I didn't want, however, write the JavaScript code for that, I wanted a component which is *configurable* on the level or Ruby.
+
+Besides grids, of course, I needed other "primitives" - such as forms, trees, layouts of different sorts, as well as I needed reusable compound widgets, an example of which could be a combination of a grid and a form in the same panel, with a form displaying details of the record selected in the grid (doesn't it sound like something pretty generic?) Or 2 grids, where the one displays the associations of the record selected in the other. Or a tree and a grid... or... well, examples can be many.
+
+With Netzke you are able to embed a fully functional grid into your views by declaring it in the controller like this (a slightly extended example from my netzke-demo project):
+
+    netzke :bosses, 
+      :widget_class_name => "GridPanel", 
+      :data_class_name => 'Boss', 
+      :ext_config => {
+        :rows_per_page => 20, 
+        :title => "Bosses",
+        :width => 400
+      },
+      :prohibit => [:delete, :update],
+      :columns => [:id, # id should always be included and is by default hidden
+        :last_name, 
+        {:name => :salary, :read_only => true, :label => "$", :renderer => 'usMoney'}, 
+        {:name => :email, :width => 180}]
+    
+Most of the configuration options are optional. But have a closer look at them: in :ext_config you may specify any configuration options that is understandable by Ext JS (and some extra, like :rows_per_page). With :prohibit you assign the permissions. With :columns you assign which columns you want the grid to show (and how). Isn't it pretty?
+
+Once the widget is declared in the controller, you automatically get a couple of helpers that make it easy to embed the widget anywhere in your view.
+
+The same goes for any widget that is created with Netzke, be it a ready-to-use widget from netzke-basepack, or a widget that you created yourself (which, of course, can be made as configurable as you like).
+
+== Extensibility
+Of course, the freedom introduced even by extensive configuration options is not always enough. Maybe you want you grid to implement a specific search, of provide a button for some manipulation on the selected records, etc. Netke allows you to extend widget as any other Ruby class, by means of inheritance.
+
+Say, we want to add a button next to "standard" Netzke::GridPanel buttons, which will generate some default data into the table (a simplified example from Netzke::FieldsConfigurator from the netzke-basepack gem):
+
+    module Netzke
+      class FieldsConfigurator < GridPanel
+        interface :load_defaults
+
+        def actions
+          super + [{
+            :text => 'Restore defaults', :handler => 'loadDefaults'
+          }]
+        end
+
+        def self.js_extend_properties
+          super.merge({
+            :load_defaults => <<-JS.l,
+              function(){
+                  Ext.Ajax.request({
+                    url:this.initialConfig.interface.loadDefaults,
+                    callback:function(){
+                      this.store.reload();
+                    },
+                    scope:this
+                  })
+                }, this);
+              }
+            JS
+          })
+        end
+
+        def load_defaults(params)
+          # restore the default data for the model
+          {}
+        end
+
+      end
+    end
+    
+From the top down: 
+* with a "interface" declaration we setup a connection between the client and server sides of the widget
+* we add an action (which the GridPanel will display as a button in the bottom toolbar) which will call loadDefaults function
+* we implement this function on the JavaScript level (yes, this is where we write the JavaScript code)
+* we implement the server side functionality in the function with the same name that was specified after "interface"
+
+That's it. We've just created a new Netzke-widget called FieldsConfigurator which inherits all the functionality of the GridPanel, and introduces something more to it.
+
+However, this approach is not the most efficient in the sense of consumed bandwidth in case you're going to use both GridPanel and FieldsConfigurator widgets in your web-application. It's because the JavaScript code generated for them is almost identical. This can be avoided by using inheritance on the JavaScript level (additionally to the inheritance in Ruby), in which case the JavaScript code for the FieldsConfigurator class will be as simple as extending GridPanel with the loadDefaults function. This is a somewhat advanced topic, which is not crucial for understanding Netzke, so I'll cover it later. But read on about the efficiency of Netzke.
+
+== Efficiency
+(TODO: write me)
