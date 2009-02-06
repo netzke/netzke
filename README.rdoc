@@ -36,7 +36,7 @@ Once the widget is declared in the controller, you automatically get a couple of
 The same goes for any widget that is created with Netzke, be it a ready-to-use widget from netzke-basepack, or a widget that you created yourself (which, of course, can be made as configurable as you like).
 
 === Nesting widgets
-Another aspect of reusability is nesting widgets one within another, such creating compound widgets. Any widget that displays one or more Ext.Panel-s with a layout 'fit' can easily embed any other widget (even an instance of itself) inside those panels. A typical example of it would be a Netzke::BorderLayoutPanel widget that allows specify nested widgets inside its regions at the configuration time (an example from the netzke-demo project, <http://netzke-demo.local/basic_app/demo>):
+Another aspect of reusability is nesting widgets one within another, such creating compound widgets. Any widget that displays one or more Ext.Panel-s with a layout 'fit' can easily embed any other widget (even an instance of itself) inside those panels. A typical example of it would be a Netzke::BorderLayoutPanel widget that allows specify nested widgets inside its regions at the configuration time (an example from the netzke-demo project, http://netzke-demo.local/basic_app/demo):
 
     :clerks => {
       :widget_class_name => "BorderLayoutPanel",
@@ -66,7 +66,7 @@ Another aspect of reusability is nesting widgets one within another, such creati
     
 As the result, the widget 'clerks' will consist of a BorderLayoutPanel containing a GridPanel in its 'center' region and a simple Panel with an explanatory text in its 'north' region. You might ask how BorderLayoutPanel shows itself off in this example? Well, resize the region - and its size will get saved on the server.
 
-Another example of a (very simple) compound widget is the last grid on the GridPanel live demo (<http://netzke-demo.writelesscode.com/grid_panel/demo>) - see how it gets reloaded by its container, the Wrapper widget, after you change the column configuration (to do that, click the configuration 'tool' on the right-up corner).
+Another example of a (very simple) compound widget is the last grid on the GridPanel live demo (http://netzke-demo.writelesscode.com/grid_panel/demo) - see how it gets reloaded by its container, the Wrapper widget, after you change the column configuration (to do that, click the configuration 'tool' on the right-up corner).
 
 === Dynamical loading of widgets
 Talking about nested widgets we have come quite close to the issue of dynamically loaded widgets. Actually, the result of it is similar to nesting widgets at the configuration time, except that the nested widget can get *loaded* from the server at the run time. That's what a typical "application" widget would do: when a user triggers a menu item, a corresponding widget gets loaded into the 'fit' Panel defined by the application.
@@ -122,11 +122,15 @@ That's it. We've just created a new Netzke-widget called FieldsConfigurator whic
 However, this approach is not the most efficient in the sense of consumed bandwidth in case you're going to use both GridPanel and FieldsConfigurator widgets in your web-application. It's because the JavaScript code generated for them is almost identical. This can be avoided by using inheritance on the JavaScript level (additionally to the inheritance in Ruby), in which case the JavaScript code for the FieldsConfigurator class will be as simple as extending GridPanel with the loadDefaults function. This is a somewhat advanced topic, which is not crucial for understanding the framework, so I'll cover it later.
 
 == Efficiency
-If you put 2 or more GridPanels in the same view (using provided helpers), Netzke will send the code definition for the GridPanel JavaScript class to the browser only once. Then the grids get instantiated with different configuration parameters. You can see a live demo of this here: <http://netzke-demo.writelesscode.com/grid_panel/demo>
+If you put 2 or more GridPanels in the same view (using provided helpers), Netzke will send the code definition for the GridPanel JavaScript class to the browser only once. Then the grids get instantiated with different configuration parameters. You can see a live demo of this here: http://netzke-demo.writelesscode.com/grid_panel/demo
 
-When one widget dynamically loads other widgets (a general example would be an application loading a widget on a menu item selection), the classes for the widgets only get loaded into the browser once, which is provided by the  built-in caching of widget classes. It makes it much faster to reload the widgets (in the example with an application it would mean activating consequent menu items), because not only the bandwidth is spared, but also the time needed by the browser to interpret the widget's class code. Live demo of this can be found here: <http://netzke-demo.writelesscode.com/basic_app/demo>
+When one widget dynamically loads other widgets (a general example would be an application loading a widget on a menu item selection), the classes for the widgets only get loaded into the browser once, which is provided by the  built-in caching of widget classes. It makes it much faster to reload the widgets (in the example with an application it would mean activating consequent menu items), because not only the bandwidth is spared, but also the time needed by the browser to interpret the widget's class code. Live demo of this can be found here: http://netzke-demo.writelesscode.com/basic_app/demo
 
 == Contact
 You may follow the Netzke development news and find more tutorials on my blog: http://blog.writelesscode.com
+
 More frequent news about Netzke mixed with random thoughts and discoveries: http://twitter.com/skozlov
-Email for your feedback and suggestions: sergei@writelesscode.com
+
+Email your feedback and suggestions to: sergei@writelesscode.com
+
+Google groups for discussions: http://groups.google.com/group/netzke
