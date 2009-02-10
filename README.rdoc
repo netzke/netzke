@@ -6,7 +6,7 @@ Currently the Netzke framework consists of 2 ruby gems (as well acting as Rails 
 == Introduction
 I have seen several attempts to implement some kind of Rails / Ext JS integration, which either appeared to be too generic and rather helpless (something like Ruby wrappers for JavaScript), or too limited in functionality (like a Rails plugin providing an Ext grid). Those projects are trying to save a developer from writing JavaScript one way or another. After several months of working professionally with Rails and Ext JS, I came to the conclusion, that this simply is not realistic: in order to have access to all the power of Ext JS library, one sooner or later comes to the necessity of writing JavaScript - that's where those approaches show their severe limitations.
 
-Finally, after some 2 years of rethinking and reworking my applications, I came to a a different approach that proved to be satisfactory. I thought that if I need to write JavaScript, at least I want to do it as little as possible. I wanted a way to write the code which will be: *reusable*, *extendible* and *efficient*. Further down I elaborate on each of this key moments, which defined the shape of the framework that I called "Netzke".
+Finally, after some 2 years of rethinking and reworking my applications, I came to a a different approach that proved to be satisfactory. I thought that if I need to write JavaScript, at least I want to do it as little as possible. I wanted a way to write the code which will be: *reusable*, *extendible* and *efficient*. Further down I elaborate on each of these key moments, which defined the shape of the framework that I'm calling "Netzke".
 
 == Reusability
 Writing the client- and server-side code (JavaScript and Ruby, correspondingly) for an Ext grid maybe a lot of work - depending on how much functionality you want to throw in. I wanted my grids not only to allow me to do all the basic CRUD (create-read-update-delete) operations, I also wanted them to be configurable on the fly (say, you want to change the width of a column or the order of the columns), supporting filters, sorting, pagination, etc - a lot of different functionality that I wanted in all my grids. But, from the other side, I wanted my grids to be able to display data from different Rails models, or enforce different permissions, look or behave differently for different users that log  into the system, etc. I didn't want, however, write the JavaScript code for that, I wanted a component which is configurable on the level or Ruby.
@@ -126,8 +126,24 @@ If you put 2 or more GridPanels in the same view (using provided helpers), Netzk
 
 When one widget dynamically loads other widgets (a general example would be an application loading a widget on a menu item selection), the classes for the widgets only get loaded into the browser once, which is provided by the  built-in caching of widget classes. It makes it much faster to reload the widgets (in the example with an application it would mean activating consequent menu items), because not only the bandwidth is spared, but also the time needed by the browser to interpret the widget's class code. Live demo of this can be found here: http://netzke-demo.writelesscode.com/basic_app/demo
 
+
+== FAQ
+=== Will I need to write JavaScript while using Netzke?
+In most of the cases - yes. However, the idea is that you do it only once per creating a widget (from scratch, using only netzke-core, or extending an existing widget - for example, from netzke-basepack). After the widget is created, you can embed it into your views or use it in your Netzke-based desktop-like application.
+
+However, I'm writing netzke-basepack driven by practical needs of my own, which means that the widgets included there are feature-packed and (going to be) used in the real life applications. So, try them out, maybe you'll hardly need to write any JavaScript code at all.
+
+=== What if I want to use jQuery instead of Ext or Sinatra instead of Rails?
+The design decisions I have taken for creating Netzke are neither Ext, nor Rails specific. It means that in some future there may be a version of jQuery+Rails, Ext+Sinatra, or any xxx+yyy version of the Netzke framework, provided that Ruby is used for the server side and JavaScript for the client side. Netzke would not be born without an extreme dynamic nature of both Ruby and JavaScript and a great level of satisfaction that accompanies dealing with them.
+
+=== When will there be more widgets available?
+I'm creating new widgets according to my own practical needs. As soon as I'll be getting something generic, I'll adding it to netzke-basepack. However, the key idea of Netzke is that it facilitates creating new widgets that are extremely easy to share. Anyone can release another gem/plugin containing other widgets, and that's what I hope to see happening after a greater deal of documentation is provided on how to write a Netzke widget.
+
+=== What's a Netzke widget precisely?
+A Netzke widget is a Ruby class that provides both the server and the client (by generating JavaScript code) side of an isolated piece of client-server functionality. Put simpler, the Ruby class will generate JavaScript code, which (being run by a browser of any other JavaScript-enabled platform, like Adobe Air) will communicate back to the corresponding instance of the same Ruby class to request server-side actions. Combining client and server parts of the code in the same class, we achieve modularity, testability and reusability.
+
 == Contact
-You may follow the Netzke development news and find more tutorials on my blog: http://blog.writelesscode.com
+You may follow Netzke development news and find more tutorials on my blog: http://blog.writelesscode.com
 
 More frequent news about Netzke mixed with random thoughts and discoveries: http://twitter.com/skozlov
 
