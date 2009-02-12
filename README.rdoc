@@ -129,18 +129,18 @@ When one widget dynamically loads other widgets (a general example would be an a
 
 == FAQ
 === Will I need to write JavaScript while using Netzke?
-In most of the cases - yes. However, the idea is that you do it only once per creating a widget (from scratch, using only netzke-core, or extending an existing widget - for example, from netzke-basepack). After the widget is created, you can embed it into your views or use it in your Netzke-based desktop-like application.
+In most of the cases - yes. However, the idea is that you do it only once per creating a widget (either from scratch, using only netzke-core, or extending an existing widget - for example, from netzke-basepack). After the widget is created, you can embed it into your views or use it in your Netzke-based desktop-like application.
 
 However, I'm writing netzke-basepack driven by practical needs of my own, which means that the widgets included there are feature-packed and (going to be) used in the real life applications. So, try them out, maybe you'll hardly need to write any JavaScript code at all.
 
+=== What's a Netzke widget precisely?
+A Netzke widget is a Ruby class that provides both the server and the client (by generating JavaScript code) side of an isolated piece of client-server functionality. Put simpler, the Ruby class will generate JavaScript code, which (being run by a browser of any other JavaScript-enabled platform, like Adobe Air) will communicate back to the corresponding instance of the same Ruby class to request server-side actions. Having client and server parts of the code combined in the same class, we achieve modularity and testability.
+
 === What if I want to use jQuery instead of Ext or Sinatra instead of Rails?
-The design decisions I have taken for creating Netzke are neither Ext, nor Rails specific. It means that in some future there may be a version of jQuery+Rails, Ext+Sinatra, or any xxx+yyy version of the Netzke framework, provided that Ruby is used for the server side and JavaScript for the client side. Netzke would not be born without an extreme dynamic nature of both Ruby and JavaScript and a great level of satisfaction that accompanies dealing with them.
+The design decisions I have taken for creating Netzke are neither Ext, nor Rails specific. It means that in some future there may be a version of jQuery+Rails, Ext+Sinatra, or any xxx+yyy version of the Netzke framework, provided that Ruby is used for the server side and JavaScript for the client side. Concerning the language choice, Netzke would not be started without an extreme dynamic nature of both Ruby and JavaScript, and a great level of satisfaction that accompanies dealing with them.
 
 === When will there be more widgets available?
-I'm creating new widgets according to my own practical needs. As soon as I'll be getting something generic, I'll adding it to netzke-basepack. However, the key idea of Netzke is that it facilitates creating new widgets that are extremely easy to share. Anyone can release another gem/plugin containing other widgets, and that's what I hope to see happening after a greater deal of documentation is provided on how to write a Netzke widget.
-
-=== What's a Netzke widget precisely?
-A Netzke widget is a Ruby class that provides both the server and the client (by generating JavaScript code) side of an isolated piece of client-server functionality. Put simpler, the Ruby class will generate JavaScript code, which (being run by a browser of any other JavaScript-enabled platform, like Adobe Air) will communicate back to the corresponding instance of the same Ruby class to request server-side actions. Combining client and server parts of the code in the same class, we achieve modularity, testability and reusability.
+I'm creating new widgets according to my own practical needs. As soon as I'll be getting something generic, I'll be adding that to netzke-basepack. However, the key idea of Netzke is that it facilitates creating new widgets that are extremely easy to share. Anyone can release another gem/plugin containing other widgets, and that's what I hope to see happening after a greater deal of documentation is provided on how to create a Netzke widget.
 
 == Contact
 You may follow Netzke development news and find more tutorials on my blog: http://blog.writelesscode.com
