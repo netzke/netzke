@@ -16,8 +16,12 @@ Having these at your disposal, you can quickly build _amazingly_ complex RIA ("R
 
 ### Documentation
 
-* [API](http://api.netzke.org)
 * [Netzke Wiki](https://github.com/skozlov/netzke/wiki)
+* [API](http://api.netzke.org)
+
+### Contributors (GitHub usernames)
+
+spieker, pschyska, elser, delwyn
 
 ### Other useful links
 
