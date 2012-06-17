@@ -11,12 +11,12 @@ Having these at your disposal, you can quickly build _amazingly_ complex RIA ("R
 
 ### Netzke projects
 
-* [Netzke Core](https://github.com/skozlov/netzke-core) - the "bare bones" of the framework
-* [Netzke Basepack](https://github.com/skozlov/netzke-basepack) - pre-built components
+* [Netzke Core](https://github.com/nomadcoder/netzke-core) - the "bare bones" of the framework
+* [Netzke Basepack](https://github.com/nomadcoder/netzke-basepack) - pre-built components
 
 ### Documentation
 
-* [Netzke Wiki](https://github.com/skozlov/netzke/wiki)
+* [Netzke Wiki](https://github.com/nomadcoder/netzke/wiki)
 * [API](http://api.netzke.org)
 
 ### Contributors (GitHub usernames)
@@ -27,4 +27,4 @@ spieker, pschyska, elser, delwyn
 
 * [Project website](http://netzke.org)
 * [Live-demo](http://demo.netzke.org) (with sample code)
-* [Twitter](http://twitter.com/skozlov)
+* [Twitter](http://twitter.com/nomadcoder)
