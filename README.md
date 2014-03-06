@@ -1,4 +1,4 @@
-Netzke is a framework that greatly facilitates creation of complex [Sencha Ext JS](http://www.sencha.com/products/extjs/) + [Ruby-on-Rails](http://rubyonrails.org/) applications by leveraging a true modular approach.
+Netzke is a framework that greatly facilitates creation of complex [Sencha Ext JS](http://www.sencha.com/products/extjs/) + [Ruby-on-Rails](http://rubyonrails.org/) applications by leveraging a modular approach.
 
 * [Project website](http://netzke.org) - a place to start
 * [Netzke Core](https://github.com/netzke/netzke-core) - the "bare bones" of the framework. The README is a must-read for understanding the framework.
