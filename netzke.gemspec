@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
-  spec.add_dependency 'netzke-core'
-  spec.add_dependency 'netzke-basepack'
-  spec.add_dependency 'netzke-testing'
+  spec.add_dependency "netzke-core", "0.10.0"
+  spec.add_dependency "netzke-basepack", "0.10.0"
+  spec.add_dependency "netzke-testing", "0.10.0"
 end
