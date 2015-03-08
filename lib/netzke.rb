@@ -1,4 +1,4 @@
 require "netzke/version"
-
-module Netzke
-end
+require 'netzke-core'
+require 'netzke-basepack'
+require 'netzke-testing'
