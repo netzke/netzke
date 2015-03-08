@@ -1,3 +1,3 @@
 module Netzke
-  VERSION = "0.12.0.beta"
+  VERSION = "0.12.0.beta2"
 end
