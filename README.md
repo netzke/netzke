@@ -2,10 +2,9 @@ Netzke is a framework that greatly facilitates creation of complex [Sencha Ext J
 
 The `netzke` Ruby gem is a meta-gem that has the following framework parts as dependencies:
 
-* [Netzke Core](https://github.com/netzke/netzke-core) - the "bare bones" of the framework. The README is a must-read for understanding the framework.
+* [Netzke Core](https://github.com/netzke/netzke-core) - the "bare bones" of the framework. Its README is a must-read for understanding the framework.
 * [Netzke Basepack](https://github.com/netzke/netzke-basepack) - a few feature-packed pre-built components.
-* [Netzke Testing](https://github.com/netzke/netzke-testing) - a set of helpers that simplify developing and testing
-Netzke components.
+* [Netzke Testing](https://github.com/netzke/netzke-testing) - a set of helpers that simplify development and testing of Netzke components.
 
 ## Useful links
 
@@ -29,7 +28,7 @@ In the current scene, Ext JS is the only library I know of with the architecture
 I’m creating new components according to my own practical needs. As I’ll be getting something generic, I’ll be adding it to netzke-basepack (or to dedicated gems). However, the key idea of Netzke is that it facilitates creating new components which are extremely easy to share, so, anyone can create his own repository of components to share.
 
 ---
-Copyright (c) 2008-2014 [Max Gorin](https://twitter.com/uptomax), released under the MIT license (see LICENSE).
+Copyright (c) 2008-2015 [Max Gorin](https://twitter.com/mxgrn), released under the MIT license (see LICENSE).
 
 **Note** that Ext JS is licensed [differently](http://www.sencha.com/products/extjs/license/), and you may need to purchase a commercial license in order to use it in your projects!
 
