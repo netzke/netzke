@@ -140,6 +140,4 @@ In the current scene, Ext JS is the only library I know of that has the architec
 I'm creating new components according to my own practical needs. As soon as get something generic, I might add that to [netzke-basepack](https://github.com/netzke/netzke-basepack) or to a dedicated gem. However, the key idea of Netzke is that it facilitates creating new components which are extremely easy to share, so that anybody could contribute.
 
 ---
-© 2015 [Max Gorin](https://twitter.com/mxgrn), released under the MIT license (see LICENSE).
-
-**Note** that Ext JS is licensed [differently](http://www.sencha.com/products/extjs/license/), and you may need to purchase a commercial license in order to use it in your projects!
+Copyright (c) 2009-2015 [Good Bit Labs Limited](http://goodbitlabs.com/), released under the GPLv3 license
