@@ -116,14 +116,28 @@ The `netzke` Ruby gem is a meta-gem that has the following framework parts as de
 
 Current version is [![Gem Version](https://badge.fury.io/rb/netzke.svg)](http://badge.fury.io/rb/netzke)
 
-The master branch is where the 1.0 version is currently being developed. See the roadmap [here](https://gist.github.com/mxgrn/b5b4a6cb92c1b7d0c958).
+## Documentation
+
+Netzke components contain both server-side and client-side code, both having API that you will want to use in your code.
+Documentation for the server-side (Ruby) classes is auto-generated (with YARD) and hosted by
+[RubyDoc.info](http://www.rubydoc.info/). Documentation for client-side classes is generated manually with
+[yuidoc](http://yui.github.io/yuidoc/) using scripts provided in this gem; it is hosted [here](http://api.netzke.org/client/).
+
+### Generating documentation for client-side code
+
+Symlink Netzke gems (such as netzke-basepack and netzke-core) into the `doc/client` directory, then run
+
+    rake client_doc:generate
+
+The combined docs for all symlinked gems will be generated in `doc/client/build`.
 
 ## Useful links
 
-* [Project website](http://netzke.org) - a place to start
-* [Demo](http://demo.netzke.org) - a demo showing off components from Basepack.
-* [Yanit](http://yanit.netzke.org) - Yet Another (Netzke) Issue Tracker, a pretty complex demo app that could be easily written in just a few hours.
-* [Twitter](https://twitter.com/netzke) - news about Netzke.
+* [Project website](http://netzke.org) - place to start
+* [Project docs](http://api.netzke.org) - links to both server- and client-side docs
+* [Demo](http://demo.netzke.org) - demo showing off components from Basepack (browse through demo components and see their source code)
+* [Yanit](http://yanit.netzke.org) - "Yet Another (Netzke) Issue Tracker", a pretty complex demo app that could be easily written in just a few hours
+* [Twitter](https://twitter.com/netzke) - bite-sized announcments about Netzke
 
 ## FAQ
 

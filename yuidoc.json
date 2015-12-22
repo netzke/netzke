@@ -1,0 +1,10 @@
+{
+  "name": "Netzke Core",
+  "description": "Barebones of the Netzke framework",
+  "logo": "http://netzke.org/images/full-logo-h30.png",
+  "url": "http://netzke.org",
+  "options": {
+    "exclude": "doc/client/netzke-core/spec/rails_app/public/extjs,doc/client/netzke-basepack/spec/rails_app/public/extjs",
+    "outdir": "doc/client/build"
+  }
+}

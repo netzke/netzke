@@ -7,7 +7,9 @@ Gemfile.lock
 InstalledFiles
 _yardoc
 coverage
-doc/
+doc/client/netzke-*
+doc/client/build
+doc/client/.yuidocs
 lib/bundler/man
 pkg
 rdoc
