@@ -1,5 +1,11 @@
 Netzke is a framework that greatly facilitates creation of complex [Sencha Ext JS](http://www.sencha.com/products/extjs/) + [Ruby-on-Rails](http://rubyonrails.org/) applications by leveraging a modular, object-oriented approach.
 
+*Notes on versioning:*
+
+* The latest *released* version is: [![Gem Version](https://badge.fury.io/rb/netzke.svg)](https://badge.fury.io/rb/netzke)
+* The version under development (master): [version.rb](https://github.com/netzke/netzke/blob/master/lib/netzke/version.rb)
+* For other versions check corresponding [branches](https://github.com/netzke/netzke/branches)
+
 ## Rationale
 
 [Sencha Ext JS]("http://www.sencha.com/products/extjs") is a powerful front-end framework, which is used for crafting web-apps that give the end user experience similar to that of a desktop application. It has an extensive set of widgets ('components'), and leverages a modular approach to its fullest: a developer can extend components (using Ext JS's own class system), nest components with the help of many powerful layouts, dynamically create and destroy them, etc. The architecture of Ext JS is well thought out and complete.
@@ -114,8 +120,6 @@ The `netzke` Ruby gem is a meta-gem that has the following framework parts as de
 * [Netzke Basepack](https://github.com/netzke/netzke-basepack) - a few feature-packed pre-built components.
 * [Netzke Testing](https://github.com/netzke/netzke-testing) - a set of helpers that simplify development and testing of Netzke components.
 
-Current version is [![Gem Version](https://badge.fury.io/rb/netzke.svg)](http://badge.fury.io/rb/netzke)
-
 ## Documentation
 
 Netzke components contain both server-side and client-side code, both having API that you will want to use in your code.
@@ -134,10 +138,9 @@ The combined docs for all symlinked gems will be generated in `doc/client/build`
 ## Useful links
 
 * [Project website](http://netzke.org) - place to start
-* [Project docs](http://api.netzke.org) - links to both server- and client-side docs
 * [Demo](http://demo.netzke.org) - demo showing off components from Basepack (browse through demo components and see their source code)
 * [Yanit](http://yanit.netzke.org) - "Yet Another (Netzke) Issue Tracker", a pretty complex demo app that could be easily written in just a few hours
-* [Twitter](https://twitter.com/netzke) - bite-sized announcments about Netzke
+* [Twitter](https://twitter.com/netzke) - bite-sized announcements about Netzke
 
 ## FAQ
 
