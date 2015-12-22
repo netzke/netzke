@@ -1,6 +1,6 @@
 {
-  "name": "Netzke Core",
-  "description": "Barebones of the Netzke framework",
+  "name": "Netzke",
+  "description": "Client-server components with Ext JS and Rails",
   "logo": "http://netzke.org/images/full-logo-h30.png",
   "url": "http://netzke.org",
   "options": {
