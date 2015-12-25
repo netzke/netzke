@@ -36,9 +36,8 @@ In `YOUR_APP/components/hello_world.rb`:
 ```ruby
 class HelloWorld < Netzke::Base
   # Configure client class
-  js_configure do |c|
+  client_class do |c|
     c.title = "Hello World component"
-    c.mixin # mix in methods from hello_world/javascripts/hello_world.js
   end
 
   # Actions are used by Ext JS to share functionality and state b/w buttons and menu items
@@ -52,19 +51,19 @@ class HelloWorld < Netzke::Base
   end
 
   # Endpoint callable from client class
-  endpoint :greet_the_world do |params,this|
+  endpoint :greet_the_world
     # call client class' method showGreeting
-    this.show_greeting("Hello World!")
+    client.show_greeting("Hello World!")
   end
 end
 ```
 
-In `YOUR_APP/components/hello_world/javascripts/hello_world.js` put the client class (JavaScript) methods:
+In `YOUR_APP/components/hello_world/client/hello_world.js` put the client class (JavaScript) methods:
 
 ```javascript
 {
   // handler for the ping_server action
-  onPingServer: function(){
+  handlePingServer: function(){
     // calling greet_the_world endpoint
     this.greetTheWorld();
   },
@@ -157,4 +156,4 @@ In the current scene, Ext JS is the only library I know of that has the architec
 I'm creating new components according to my own practical needs. As soon as get something generic, I might add that to [netzke-basepack](https://github.com/netzke/netzke-basepack) or to a dedicated gem. However, the key idea of Netzke is that it facilitates creating new components which are extremely easy to share, so that anybody could contribute.
 
 ---
-Copyright (c) 2009-2015 [Good Bit Labs Limited](http://goodbitlabs.com/), released under the GPLv3 license
+Copyright (c) 2009-2015 [Good Bit Labs](http://goodbitlabs.com/), released under the GPLv3 license
