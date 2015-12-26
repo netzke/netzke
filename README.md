@@ -41,7 +41,7 @@ class HelloWorld < Netzke::Base
   end
 
   # Actions are used by Ext JS to share functionality and state b/w buttons and menu items
-  # The handler for this action should be called onPingServer by default
+  # The handler for this action should be called netzkeOnPingServer by default
   action :ping_server
 
   # Self-configure with a bottom toolbar
@@ -63,9 +63,9 @@ In `YOUR_APP/components/hello_world/client/hello_world.js` put the client class 
 ```javascript
 {
   // handler for the ping_server action
-  handlePingServer: function(){
+  netzkeOnPingServer: function(){
     // calling greet_the_world endpoint
-    this.greetTheWorld();
+    this.server.greetTheWorld();
   },
 
   // called by the server as the result of executing the endpoint
