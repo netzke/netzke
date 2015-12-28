@@ -10,6 +10,7 @@ namespace :client_doc do
   task :generate do
     version = "Core #{Netzke::Core::VERSION}, Basepack #{Netzke::Basepack::VERSION}"
     puts "Generating client-side docs #{version}..."
+    `rm -rf doc/client/build`
     `yuidoc #{CLIENT_DOC} --project-version "#{version}"`
   end
 
