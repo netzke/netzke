@@ -77,16 +77,6 @@ In `YOUR_APP/components/hello_world/client/hello_world.js` put the client class 
 
 To embed the component in Rails view:
 
-Add `netzke` routes:
-
-```ruby
-# in routes.rb
-RailsApp::Application.routes.draw do
-  netzke
-  ...
-end
-```
-
 Use `load_netzke` in the layout to include Ext JS and Netzke scripts and stylesheets:
 
 ```erb
