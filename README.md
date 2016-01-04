@@ -99,7 +99,7 @@ Embed the component in the Rails view:
 <%= netzke :hello_world %>
 ```
 
-To further familiarize yourself with Netzke architecture, refer to the [Netzke Core README](https://github.com/netzke/netzke-core).
+To learn about Netzke architecture in detail, refer to the [Netzke Core README](https://github.com/netzke/netzke-core).
 
 ## Netzke gems
 
@@ -128,22 +128,21 @@ The combined docs for all symlinked gems will be generated in `doc/client/build`
 
 * [Project website](http://netzke.org) - place to start
 * [Demo](http://demo.netzke.org) - demo showing off components from Basepack (browse through demo components and see their source code)
-* [Yanit](http://yanit.netzke.org) - "Yet Another (Netzke) Issue Tracker", a pretty complex demo app that could be easily written in just a few hours
 * [Twitter](https://twitter.com/netzke) - bite-sized announcements about Netzke
 
 ## FAQ
 
 ### Will I need to write JavaScript while using Netzke?
 
-Yes and no. For developing new components or extending existing ones (e.g. from [Basepack](https://github.com/netzke/netzke-basepack)) you'll most probably need to apply your Sencha Ext JS knowledge (and Netzke isn't supposed to limit you here in any way). However, the idea is that you write JavaScript code only once. After the component is created, use it as if it were a part of some Ruby library. A comparison with Ruby gems that use C extensions is also appropriate here: as some Ruby gems incapsulate C code for you, the same way Netzke components incapsulate JavaScript.
+It depends. For developing new components or extending existing ones (e.g. from [Basepack](https://github.com/netzke/netzke-basepack)) you'll most probably need to apply your Sencha Ext JS knowledge (and Netzke isn't supposed to limit you here in any way). However, the idea is that you write JavaScript code only once. After the component is created, use it as if it were a part of some Ruby library. A comparison with Ruby gems that use C extensions is also appropriate here: as some Ruby gems incapsulate C code for you, the same way Netzke components incapsulate JavaScript.
 
 ### Why did you choose for Ext JS as front end?
 
-In the current scene, Ext JS is the only library I know of that has the architecture consistent, flexible, and complete enough to allow for complex desktop-like web applications.
+In the current scene, Ext JS is the only library I know of that has the architecture consistent, flexible, and complete enough to allow for complex "enterprise level" web applications.
 
 ### When will there be more components available?
 
 I'm creating new components according to my own practical needs. As soon as get something generic, I might add that to [netzke-basepack](https://github.com/netzke/netzke-basepack) or to a dedicated gem. However, the key idea of Netzke is that it facilitates creating new components which are extremely easy to share, so that anybody could contribute.
 
 ---
-Copyright (c) 2009-2015 [Good Bit Labs](http://goodbitlabs.com/), released under the GPLv3 license
+Copyright (c) 2009-2015 [Good Bit Labs](http://goodbitlabs.com/), released under the same license as [Ext JS](https://www.sencha.com/legal/#Sencha_Ext_JS)
