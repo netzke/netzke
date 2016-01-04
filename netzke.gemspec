@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Max Gorin"]
   spec.email         = ["max@goodbitlabs.com"]
   spec.summary       = "Client-server GUI components with Sencha Ext JS and Ruby on Rails"
-  spec.description   = "Build complex web UI in a modular way"
+  spec.description   = "Netzke helps you build complex web UI in a modular way"
   spec.homepage      = "http://netzke.org"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -17,9 +17,9 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "netzke-core", "1.0.0.0.pre4"
-  spec.add_dependency "netzke-basepack", "1.0.0.0.pre3"
-  spec.add_dependency "netzke-testing", "1.0.0.0.pre"
+  spec.add_dependency "netzke-core", "1.0.0.0"
+  spec.add_dependency "netzke-basepack", "1.0.0.0"
+  spec.add_dependency "netzke-testing", "1.0.0.0"
 
   spec.add_development_dependency "bundler", "~> 1.5"
   spec.add_development_dependency "rake"
