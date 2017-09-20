@@ -1,10 +1,6 @@
 Netzke is a framework that greatly facilitates creation of complex [Sencha Ext JS](http://www.sencha.com/products/extjs/) + [Ruby-on-Rails](http://rubyonrails.org/) applications by leveraging a modular, object-oriented approach.
 
-*Notes on versioning:*
-
-* The latest *released* version is: [![Gem Version](https://badge.fury.io/rb/netzke.svg)](https://badge.fury.io/rb/netzke)
-* The version under development (master): [version.rb](https://github.com/netzke/netzke/blob/master/lib/netzke/version.rb)
-* For other versions check corresponding [branches](https://github.com/netzke/netzke/branches)
+[![Gem Version](https://badge.fury.io/rb/netzke.svg)](https://badge.fury.io/rb/netzke)
 
 ## Rationale
 
