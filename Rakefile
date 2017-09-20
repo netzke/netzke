@@ -16,7 +16,7 @@ namespace :client_doc do
 
   desc "Publish client-side docs"
   task publish: :generate do
-    server = "netzke.com"
+    server = "netzke.org"
     dir = 'www/api.netzke.org/client'
     puts "Publishing to #{server}:/home/mxgrn/#{dir}..."
     `ssh #{server} "mkdir -p #{dir}"`
