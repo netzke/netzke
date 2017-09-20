@@ -107,7 +107,7 @@ The `netzke` Ruby gem is a meta-gem that has the following framework parts as de
 
 ## Documentation
 
-Netzke components contain both server-side and client-side code, both having API that you will want to use in your code.
+Netzke components consist of server side (Ruby) and client side (JavaScript) code, each having an API that you will want to use in your app.
 Documentation for the server-side (Ruby) classes is auto-generated (with YARD) and hosted by
 [RubyDoc.info](http://www.rubydoc.info/). Documentation for client-side classes is generated manually with
 [yuidoc](http://yui.github.io/yuidoc/) using scripts provided in this gem; it is hosted [here](http://api.netzke.org/client/).
